@@ -10,6 +10,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Optional;
+
 @Data
 @Entity
 @Builder
@@ -25,5 +27,8 @@ public class ShowSeat extends BaseModel {
 
     @Enumerated(EnumType.ORDINAL)
     private ShowSeatStatus status;
+
+    @ManyToOne
+    private Optional<Ticket> ticket;
 
 }
